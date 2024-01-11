@@ -29,7 +29,7 @@ def scrape_weather_data(url):
         columns = row.find_all('td')
         if len(columns) >= 5:  # 必要な列が存在するか確認
             date = columns[0].text.strip()  # 日付
-            precipitation = columns[3].text.strip()  # 降水量の合計
+            precipitation = columns[3].text.strip()  # 降水量
             avg_temp = columns[6].text.strip()  # 気温の平均
             daylight_hours = columns[16].text.strip()  # 日照時間
             weather_condition = columns[19].text.strip()  # 天気概況（昼）
@@ -86,6 +86,14 @@ def insert_into_database(data_list):
 
 if __name__ == "__main__":
     url = "https://www.data.jma.go.jp/stats/etrn/view/daily_s1.php?prec_no=44&block_no=47662&year=2023&month=12&day=1&view="
+
+    # スクレイピングしてデータを取得
     weather_data = scrape_weather_data(url)
-    for data in weather_data:
-        print(data)
+
+    # SQLiteデータベースとテーブルを作成
+    create_database_table()
+
+    # データをSQLiteデータベースに挿入
+    insert_into_database(weather_data)
+
+    print("completed")
