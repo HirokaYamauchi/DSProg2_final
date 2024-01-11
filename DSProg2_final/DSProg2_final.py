@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import time
+import sqlite3
 
 def scrape_weather_data(url):
     # URLからページの内容を取得
