@@ -8,7 +8,7 @@ def scrape_weather_data(url):
     response = requests.get(url)
     time.sleep(3)
     if response.status_code != 200:
-        print("Failed to retrieve the webpage")
+        print("Failed")
         return
 
     # BeautifulSoupオブジェクトを作成

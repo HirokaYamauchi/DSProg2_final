@@ -1,5 +1,25 @@
 import sqlite3
 
+def create_data_list2():
+    # サンプルデータリストの作成（仮）
+    data_list2 = [
+        {
+            '日付': '2023-12-01',
+            '曜日': '月曜日',
+            'screen_time': '3 hours',
+            'よく使うアプリ': 'YouTube'
+        },
+        {
+            '日付': '2024-12-02',
+            '曜日': '火曜日',
+            'screen_time': '2.5 hours',
+            'よく使うアプリ': 'Instagram'
+        },
+        # 他のデータも同様に追加できます
+    ]
+
+    return data_list2
+
 def create_database_table2():
     # SQLiteデータベース接続
     conn2 = sqlite3.connect('weather_data.db')
@@ -40,7 +60,13 @@ def insert_into_database(data_list2):
 
 if __name__ == "__main__":
 
+    # データベースに挿入するデータのリストを作成
+    data_list2 = create_data_list2()
+
     # SQLiteデータベースとテーブルを作成
     create_database_table2()
+
+    # データをSQLiteデータベースに挿入
+    insert_into_database(data_list2)
 
     print("completed")
