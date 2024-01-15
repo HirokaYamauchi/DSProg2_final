@@ -8,7 +8,7 @@ def scrape_weather_data(url):
     response = requests.get(url)
     time.sleep(3)
     if response.status_code != 200:
-        print("Failed to retrieve the webpage")
+        print("Failed")
         return
 
     # BeautifulSoupオブジェクトを作成
@@ -89,6 +89,8 @@ if __name__ == "__main__":
 
     # スクレイピングしてデータを取得
     weather_data = scrape_weather_data(url)
+    # データリストから一番目と二番目のデータを削除
+    weather_data = weather_data[2:]
 
     # SQLiteデータベースとテーブルを作成
     create_database_table()
