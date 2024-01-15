@@ -89,6 +89,8 @@ if __name__ == "__main__":
 
     # スクレイピングしてデータを取得
     weather_data = scrape_weather_data(url)
+    # データリストから一番目と二番目のデータを削除
+    weather_data = weather_data[2:]
 
     # SQLiteデータベースとテーブルを作成
     create_database_table()
