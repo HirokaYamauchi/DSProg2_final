@@ -1,7 +1,7 @@
 import sqlite3
 
 def create_data_list2():
-    # サンプルデータリストの作成（仮）
+    # サンプルデータリストの作成
     data_list2 = [
         {'日付': '2023-12-03', '曜日': '日', 'screen_time': '3hours', 'よく使うアプリ': 'YouTube'},
         {'日付': '2023-12-04', '曜日': '月', 'screen_time': '3 hours', 'よく使うアプリ': 'YouTube'},
