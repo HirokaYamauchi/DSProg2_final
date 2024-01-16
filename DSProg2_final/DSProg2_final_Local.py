@@ -47,7 +47,7 @@ def create_database_table2():
         id INTEGER PRIMARY KEY,
         日付 TEXT NOT NULL,
         曜日 TEXT,
-        screen_time TEXT,
+        screen_time FLOAT,
         よく使うアプリ TEXT
     );
     '''

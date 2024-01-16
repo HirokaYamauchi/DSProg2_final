@@ -56,9 +56,9 @@ def create_database_table():
     CREATE TABLE IF NOT EXISTS weather (
         id INTEGER PRIMARY KEY,
         日付 TEXT NOT NULL,
-        降水量 TEXT,
-        平均気温 TEXT,
-        日照時間 TEXT,
+        降水量 FLOAT,
+        平均気温 FLOAT,
+        日照時間 FLOAT,
         天気概況_昼 TEXT
     );
     '''
